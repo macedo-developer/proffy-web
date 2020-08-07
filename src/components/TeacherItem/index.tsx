@@ -1,38 +1,62 @@
 import React from "react";
 
+import api from "../../services/api";
 import whatsappIcon from "../../assets/icons/whatsapp.svg";
 
 import "./styles.css";
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: number;
+  name: string;
+  avatar: string;
+  bio: string;
+  cost: number;
+
+  subject: string;
+  whatsapp: string;
+  user_id: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post("connections", {
+      user_id: teacher.user_id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img
-          src="https://media-exp1.licdn.com/dms/image/C4D03AQEvtVgK-GfmDg/profile-displayphoto-shrink_200_200/0?e=1602115200&v=beta&t=akDu05-FPWT2bupIHQWFnV5Ffsd-eZ0eDV11obWdHME"
-          alt="Renata Macedo"
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Renata Macedo</strong>
-          <span>Lógica de Programação</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Entusiasta das melhores tecnologias de Programação
-        <br /> <br />
-        Apaixonada por aprender e ensinar lógica de programação, sempre
-        repassando esse conhecimento da melhor forma.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
-          Preço/hora <strong>R$ 50,00</strong>
+          Preço/hora{" "}
+          <strong>
+            {Intl.NumberFormat("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            }).format(teacher.cost)}
+          </strong>
         </p>
 
-        <button type="button">
+        <a
+          href={`https://wa.me/${teacher.whatsapp}`}
+          target="_blank"
+          onClick={createNewConnection}
+        >
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
