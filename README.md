@@ -12,7 +12,9 @@
 
 ### ✨ [Demo](https://proffy-macedo.vercel.app)
 
-![Farmers Market Finder Demo](demo/gif-demo.gif)
+<p align="center">
+  <img src="demo/gif-demo.gif" alt="animated" />
+</p>
 
 ## Install
 
