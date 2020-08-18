@@ -12,6 +12,7 @@ import api from "../../services/api";
 import warningIcon from "../../assets/icons/warning.svg";
 
 import "./styles.css";
+import MessageSuccess from "../../components/MessageSuccess";
 
 function TeacherForm() {
   const history = useHistory();
