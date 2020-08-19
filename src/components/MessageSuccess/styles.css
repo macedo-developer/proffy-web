@@ -1,0 +1,77 @@
+#page-message-success {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-primary);
+
+  color: var(--color-text-in-primary);
+}
+
+#page-message-success .background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5rem;
+}
+
+#page-message-success .message {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#page-message-success .message h1 {
+  color: var(--color-title-in-primary);
+  line-height: 4.2rem;
+
+  font: 700 3.4rem Archivo;
+
+  margin: 2.4rem 0;
+}
+
+#page-message-success .message p {
+  max-width: 50rem;
+
+  font-size: 1.6rem;
+  text-align: center;
+  font: 500 1.6rem Poppins;
+}
+
+#page-message-success .message a {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+
+  color: var(--color-button-text);
+
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+
+  font: 700 1.6rem Archivo;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 3.2rem;
+  transition: background-color 0.2;
+}
+
+#page-message-success .message a:hover {
+  background: var(--color-secundary-dark);
+}
+
+@media (min-width: 700px) {
+  #page-message-success .message a {
+    width: 25rem;
+  }
+}
