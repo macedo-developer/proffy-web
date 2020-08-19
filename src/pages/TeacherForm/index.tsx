@@ -12,7 +12,6 @@ import api from "../../services/api";
 import warningIcon from "../../assets/icons/warning.svg";
 
 import "./styles.css";
-import MessageSuccess from "../../components/MessageSuccess";
 
 function TeacherForm() {
   const history = useHistory();
@@ -78,8 +77,14 @@ function TeacherForm() {
     api
       .post("classes", data)
       .then((response) => {
-        alert("Success");
-        history.push("/");
+        history.push({
+          pathname: "/success",
+          state: {
+            title: "Cadastro salvo!",
+            description:
+              "Tudo certo, seu cadastro está na nossa lista de professores. Agora é só ficar de olho no seu WhatsApp.",
+          },
+        });
       })
       .catch((err) => alert(err));
   }
