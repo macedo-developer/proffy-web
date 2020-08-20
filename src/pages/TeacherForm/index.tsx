@@ -62,6 +62,20 @@ function TeacherForm() {
   function handleCreateClasses(e: FormEvent) {
     e.preventDefault();
 
+    if (
+      name === "" ||
+      avatar == "" ||
+      whatsapp == "" ||
+      bio == "" ||
+      subject == "" ||
+      cost == "" ||
+      scheduleItems ||
+      []
+    ) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
     const data = {
       name,
       avatar,
