@@ -64,13 +64,12 @@ function TeacherForm() {
 
     if (
       name === "" ||
-      avatar == "" ||
-      whatsapp == "" ||
-      bio == "" ||
-      subject == "" ||
-      cost == "" ||
-      scheduleItems ||
-      []
+      avatar === "" ||
+      whatsapp === "" ||
+      bio === "" ||
+      subject === "" ||
+      cost === "" ||
+      scheduleItems === []
     ) {
       alert("Preencha todos os campos!");
       return;
