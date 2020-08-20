@@ -22,7 +22,7 @@ const MessageSuccess: React.FC = () => {
           <h1>{props.title}</h1>
           <p>{props.description}</p>
 
-          <Link to="/">Voltar para página Inicial</Link>
+          <Link to="/study">Acessar lista</Link>
         </div>
       </div>
     </div>
