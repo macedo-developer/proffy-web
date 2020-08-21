@@ -16,6 +16,7 @@ function Login() {
         <div className="logo-container">
           <img src={logoImg} alt="Logo Proffy" />
           <p>Sua plataforma de estudos online.</p>
+          <p>(Em desenvolvimento)</p>
         </div>
 
         <div className="login-container">
