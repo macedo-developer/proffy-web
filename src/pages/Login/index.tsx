@@ -17,7 +17,7 @@ function Login() {
           <img src={logoImg} alt="Logo Proffy" />
           <p>Sua plataforma de estudos online.</p>
           <p>(Em desenvolvimento)</p>
-          <Link to="https://www.linkedin.com/in/macedorenata/">Linkedin</Link>
+          <a href="https://www.linkedin.com/in/macedorenata/">Linkedin</a>
         </div>
 
         <div className="login-container">
