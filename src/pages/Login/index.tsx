@@ -88,7 +88,7 @@ function Login() {
               <p>
                 Não tem conta?
                 <br />
-                <Link className="button" to="/">
+                <Link className="button" to="/register">
                   Cadastra-se
                 </Link>
               </p>

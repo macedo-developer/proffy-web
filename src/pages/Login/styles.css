@@ -159,6 +159,8 @@
 
 #page-login .login-container .footer .question p a {
   font-weight: 700;
+
+  color: var(--color-primary);
 }
 
 #page-login .login-container .footer .question span {
