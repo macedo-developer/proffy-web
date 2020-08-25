@@ -68,6 +68,21 @@
   width: 70%;
 }
 
+#page-login .login-container form .pass-group {
+  position: relative;
+}
+
+#page-login .login-container form .pass-group svg {
+  position: absolute;
+  top: 60%;
+  right: 8%;
+  cursor: pointer;
+  transition: 4s;
+}
+#page-login .login-container form .pass-group svg:hover {
+  color: var(--color-primary-dark);
+}
+
 #page-login .login-container form .form-footer {
   margin-top: 1rem;
   display: flex;
@@ -123,6 +138,7 @@
 #page-login .login-container form button:disabled {
   background-color: var(--color-button-disabled);
   color: var(--color-text-complement);
+  cursor: not-allowed;
 }
 
 #page-login .login-container .footer {

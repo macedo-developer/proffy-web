@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 import logoImg from "../../assets/logo.svg";
 import logoPrimaryImg from "../../assets/logo-primary.svg";
@@ -10,6 +11,17 @@ import "./styles.css";
 import Input from "../../components/Input";
 
 function Login() {
+  const history = useHistory();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [eyePassword, setEyePassword] = useState(false);
+
+  function handleSubmit() {
+    history.push("/landing");
+  }
+
   return (
     <div id="page-login">
       <div className="page-login-content">
@@ -22,10 +34,38 @@ function Login() {
 
         <div className="login-container">
           <img className="logo-mobile" src={logoPrimaryImg} alt="Logo Proffy" />
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Fazer login</h1>
-            <Input label="Email" name="email" />
-            <Input label="Senha" name="password" />
+            <Input
+              label="Email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              name="email"
+              autoFocus
+            />
+            <div className="pass-group">
+              <Input
+                label="Senha"
+                type={eyePassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+              />
+
+              {eyePassword ? (
+                <FiEyeOff
+                  onClick={() => setEyePassword(!eyePassword)}
+                  color="#8257e5"
+                  size={20}
+                />
+              ) : (
+                <FiEye
+                  onClick={() => setEyePassword(!eyePassword)}
+                  color="#8257e5"
+                  size={20}
+                />
+              )}
+            </div>
 
             <div className="form-footer">
               <div className="check-group">
@@ -35,7 +75,10 @@ function Login() {
               <Link to="/">Esqueci minha senha</Link>
             </div>
 
-            <button disabled type="submit">
+            <button
+              disabled={username !== "" && password !== "" ? false : true}
+              type="submit"
+            >
               Entrar
             </button>
           </form>
