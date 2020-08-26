@@ -4,3 +4,74 @@
 
   background: var(--color-background);
 }
+
+#page-register .page-register-content {
+  width: 100%;
+
+  display: flex;
+}
+
+#page-register .register-logo-container {
+  display: none;
+}
+
+#page-register .register-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 4rem auto;
+}
+
+#page-register .register-container form {
+  width: 70%;
+}
+
+#page-register .register-container form h1 {
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 3.6rem;
+  margin-bottom: 1rem;
+
+  color: var(--color-text-title);
+}
+
+#page-register .register-container form p {
+  max-width: 21.3rem;
+  font: 400 1.6rem Poppins;
+  line-height: 2.6rem;
+
+  margin-bottom: 2rem;
+}
+
+#page-register .register-container form button {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  border-radius: 0.8rem;
+  margin-top: 3rem;
+  border: 0;
+  color: var(--color-button-text);
+
+  font: 700 1.4rem Archivo;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  cursor: pointer;
+  transition: barckground-color 0.4s;
+}
+
+#page-register .register-container form button:hover {
+  background: var(--color-secundary-dark);
+}
+
+#page-register .register-container form button:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-complement);
+
+  cursor: not-allowed;
+}
