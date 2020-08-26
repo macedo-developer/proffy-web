@@ -23,8 +23,10 @@ function Register() {
             <h1>Cadastro</h1>
 
             <p>Preencha os dados abaixo para começar</p>
-            <Input label="Nome" name="name" autoFocus />
-            <Input label="Sobrenome" name="surname" />
+            <div className="input-group">
+              <Input label="Nome" name="name" autoFocus />
+              <Input label="Sobrenome" name="surname" />
+            </div>
             <Input label="E-mail" name="email" />
             <Input label="Senha" name="password" />
 
