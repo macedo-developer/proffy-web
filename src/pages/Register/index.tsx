@@ -18,6 +18,8 @@ function Register() {
             <Input label="Sobrenome" name="surname" />
             <Input label="E-mail" name="email" />
             <Input label="Senha" name="password" />
+
+            <button>Concluir cadastro</button>
           </form>
         </div>
         <div className="register-logo-container">
