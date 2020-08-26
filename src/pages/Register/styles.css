@@ -11,6 +11,19 @@
   display: flex;
 }
 
+#page-register .register-container header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+#page-register .register-container header > img {
+  height: 1.6rem;
+}
+
 #page-register .register-logo-container {
   display: none;
 }
@@ -74,4 +87,38 @@
   color: var(--color-text-complement);
 
   cursor: not-allowed;
+}
+
+@media (min-width: 700px) {
+  #page-register .register-container {
+    width: 50%;
+  }
+
+  #page-register .register-logo-container {
+    width: 50%;
+    max-width: 75rem;
+    height: 100vh;
+    background: var(--color-primary);
+    background-image: url("../../assets/login-background.svg");
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #page-register .register-logo-container img {
+    height: 10rem;
+  }
+
+  #page-register .register-logo-container p {
+    margin-top: 1rem;
+
+    color: var(--color-text-in-primary);
+  }
+
+  #page-register .register-container header > img {
+    display: none;
+  }
 }
