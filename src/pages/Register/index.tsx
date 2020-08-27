@@ -13,6 +13,11 @@ import { Link } from "react-router-dom";
 function Register() {
   const [eyePassword, setEyePassword] = useState(false);
 
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div id="page-register">
       <div className="page-register-content">
@@ -28,16 +33,34 @@ function Register() {
 
             <p>Preencha os dados abaixo para começar</p>
             <div className="input-group">
-              <Input label="Nome" name="name" autoFocus />
-              <Input label="Sobrenome" name="surname" />
+              <Input
+                label="Nome"
+                name="name"
+                autoFocus
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Input
+                label="Sobrenome"
+                name="surname"
+                value={surname}
+                onChange={(e) => setSurname(e.target.value)}
+              />
             </div>
-            <Input label="E-mail" name="email" />
+            <Input
+              label="E-mail"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
             <div className="pass-group">
               <Input
                 label="Senha"
                 type={eyePassword ? "text" : "password"}
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               {eyePassword ? (
                 <FiEyeOff
@@ -54,7 +77,14 @@ function Register() {
               )}
             </div>
 
-            <button type="submit" disabled>
+            <button
+              type="submit"
+              disabled={
+                name !== "" && surname !== "" && email !== "" && password !== ""
+                  ? false
+                  : true
+              }
+            >
               Concluir cadastro
             </button>
           </form>
