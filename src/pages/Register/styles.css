@@ -126,9 +126,7 @@
   #page-register .register-container form .input-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-
-    margin-bottom: 1.4rem;
+    column-gap: 0.2rem;
   }
 
   #page-register
