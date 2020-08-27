@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 import logoImg from "../../assets/logo.svg";
 import logoPrimaryImg from "../../assets/logo-primary.svg";
@@ -9,6 +11,8 @@ import Input from "../../components/Input";
 import { Link } from "react-router-dom";
 
 function Register() {
+  const [eyePassword, setEyePassword] = useState(false);
+
   return (
     <div id="page-register">
       <div className="page-register-content">
@@ -28,7 +32,27 @@ function Register() {
               <Input label="Sobrenome" name="surname" />
             </div>
             <Input label="E-mail" name="email" />
-            <Input label="Senha" name="password" />
+
+            <div className="pass-group">
+              <Input
+                label="Senha"
+                type={eyePassword ? "text" : "password"}
+                name="password"
+              />
+              {eyePassword ? (
+                <FiEyeOff
+                  onClick={() => setEyePassword(!eyePassword)}
+                  color="#8257e5"
+                  size={20}
+                />
+              ) : (
+                <FiEye
+                  onClick={() => setEyePassword(!eyePassword)}
+                  color="#8257e5"
+                  size={20}
+                />
+              )}
+            </div>
 
             <button type="submit" disabled>
               Concluir cadastro
