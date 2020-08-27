@@ -74,8 +74,8 @@
 
 #page-login .login-container form .pass-group svg {
   position: absolute;
-  top: 60%;
-  right: 8%;
+  top: 2.8rem;
+  right: 2.4rem;
   cursor: pointer;
   transition: 4s;
 }
