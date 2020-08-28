@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logoImg from "../../assets/logo.svg";
+import logoPrimaryImg from "../../assets/logo-primary.svg";
 import backImg from "../../assets/icons/back.svg";
 
 import "./styles.css";
@@ -16,6 +17,7 @@ function RedefinePassword() {
             <Link to="/">
               <img src={backImg} alt="Votar para Login" />
             </Link>
+            <img src={logoPrimaryImg} alt="Logo proffy" />
           </header>
 
           <form>
@@ -24,10 +26,12 @@ function RedefinePassword() {
 
             <Input label="Email" name="email" />
 
-            <button type="submit">Enviar</button>
+            <button type="submit" disabled>
+              Enviar
+            </button>
           </form>
         </div>
-        <div className="register-logo-container">
+        <div className="redefine-logo-container">
           <img src={logoImg} alt="Logo Proffy" />
           <p>Sua plataforma de estudos online.</p>
         </div>
