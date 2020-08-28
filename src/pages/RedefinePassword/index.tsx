@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logoImg from "../../assets/logo.svg";
@@ -9,6 +9,8 @@ import "./styles.css";
 import Input from "../../components/Input";
 
 function RedefinePassword() {
+  const [email, setEmail] = useState("");
+
   return (
     <div id="page-redefine">
       <div className="page-redefine-content">
@@ -24,9 +26,14 @@ function RedefinePassword() {
             <h1>Eita, esqueceu sua senha?</h1>
             <p>Não esquenta, vamos dar um jeito nisso.</p>
 
-            <Input label="Email" name="email" />
+            <Input
+              label="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-            <button type="submit" disabled>
+            <button type="submit" disabled={email !== "" ? false : true}>
               Enviar
             </button>
           </form>
