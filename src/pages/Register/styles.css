@@ -41,6 +41,7 @@
 
 #page-register .register-container form {
   width: 70%;
+  margin-top: 3rem;
 }
 
 #page-register .register-container form h1 {
@@ -109,6 +110,8 @@
 @media (min-width: 700px) {
   #page-register .register-container {
     width: 50%;
+
+    height: 80%;
   }
 
   #page-register .register-logo-container {
@@ -137,6 +140,10 @@
 
   #page-register .register-container header > img {
     display: none;
+  }
+
+  #page-register .register-container form {
+    margin-top: 12rem;
   }
 
   #page-register .register-container form .input-group {
