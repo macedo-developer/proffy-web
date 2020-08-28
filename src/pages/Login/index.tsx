@@ -72,7 +72,7 @@ function Login() {
                 <input type="checkbox" name="remember" id="remember"></input>
                 <p>Lembrar-me</p>
               </div>
-              <Link to="/">Esqueci minha senha</Link>
+              <Link to="/redefine-password">Esqueci minha senha</Link>
             </div>
 
             <button
