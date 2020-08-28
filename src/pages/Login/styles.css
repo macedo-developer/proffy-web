@@ -110,6 +110,11 @@
   color: var(--color-text-complement);
   text-decoration: none;
   cursor: pointer;
+  transition: color 0.4s;
+}
+
+#page-login .login-container form .form-footer a:hover {
+  color: var(--color-primary);
 }
 
 #page-login .login-container form button {
