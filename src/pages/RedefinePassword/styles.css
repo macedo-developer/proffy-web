@@ -1,0 +1,126 @@
+#page-redefine {
+  width: 100vw;
+  height: 100vh;
+
+  background: var(--color-background);
+  overflow: hidden;
+}
+
+#page-redefine .page-redefine-content {
+  width: 100%;
+  display: flex;
+}
+
+#page-redefine .redefine-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 4rem auto;
+}
+
+#page-redefine .redefine-container header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#page-redefine .redefine-container header > img {
+  height: 1.6rem;
+}
+
+#page-redefine .redefine-container form {
+  width: 70%;
+  margin-top: 8rem;
+}
+
+#page-redefine .redefine-container form h1 {
+  max-width: 24rem;
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 3.6rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-title);
+}
+
+#page-redefine .redefine-container form p {
+  font: 400 1.6rem Poppins;
+  line-height: 2.6rem;
+
+  margin-bottom: 1.5rem;
+}
+
+#page-redefine .redefine-container form button {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  border-radius: 0.8rem;
+  margin-top: 3rem;
+  border: 0;
+
+  color: var(--color-button-text);
+
+  font: 700 1.4rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+#page-redefine .redefine-container form button:hover {
+  background: var(--color-secundary-dark);
+}
+
+#page-redefine .redefine-container form button:disabled {
+  background: var(--color-button-disabled);
+  color: var(--color-text-complement);
+  cursor: not-allowed;
+}
+
+#page-redefine .redefine-logo-container {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  #page-redefine .redefine-container {
+    width: 50%;
+    height: 80%;
+  }
+
+  #page-redefine .redefine-logo-container {
+    width: 50%;
+    max-width: 75rem;
+    height: 100vh;
+    background: var(--color-primary);
+    background-image: url("../../assets/login-background.svg");
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #page-redefine .redefine-logo-container img {
+    height: 10rem;
+  }
+
+  #page-redefine .redefine-logo-container p {
+    margin-top: 1rem;
+    color: var(--color-text-in-primary);
+  }
+
+  #page-redefine .redefine-container header > img {
+    display: none;
+  }
+
+  #page-redefine .redefine-container form {
+    margin-top: 12rem;
+  }
+}
