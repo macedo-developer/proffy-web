@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link, useHistory } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -16,10 +16,34 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [remember, setRemember] = useState(false);
+
   const [eyePassword, setEyePassword] = useState(false);
 
+  useEffect(() => {
+    const res = localStorage.getItem("remember");
+    if (res?.length != 0) setRemember(res == "true" ? true : false);
+
+    if (res === "true") {
+      setUsername(localStorage.getItem("username") || "");
+      setPassword(localStorage.getItem("password") || "");
+    }
+  }, []);
+
   function handleSubmit() {
+    if (username === "" && password === "") return alert("Preencha os campos!");
+
+    if (remember) {
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+    }
+
     history.push("/landing");
+  }
+
+  function handleRemember() {
+    localStorage.setItem("remember", remember ? "false" : "true");
+    setRemember(!remember);
   }
 
   return (
@@ -69,7 +93,13 @@ function Login() {
 
             <div className="form-footer">
               <div className="check-group">
-                <input type="checkbox" name="remember" id="remember"></input>
+                <input
+                  type="checkbox"
+                  name="remember"
+                  id="remember"
+                  checked={remember}
+                  onChange={handleRemember}
+                ></input>
                 <p>Lembrar-me</p>
               </div>
               <Link to="/redefine-password">Esqueci minha senha</Link>
