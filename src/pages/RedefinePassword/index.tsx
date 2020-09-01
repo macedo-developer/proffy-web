@@ -22,6 +22,8 @@ function RedefinePassword() {
         title: "Redefinição enviada!",
         description:
           "Boa, agora é só checar o e-mail que foi enviado para você redefinir sua senha e aproveite os estudos.",
+        titleButton: "Voltar ao Login",
+        link: "/",
       },
     });
   }
