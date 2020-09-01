@@ -8,6 +8,8 @@ import "./styles.css";
 interface MessageSuccessProps {
   title: string;
   description: string;
+  link: string;
+  titleButton: string;
 }
 
 const MessageSuccess: React.FC = () => {
@@ -22,7 +24,7 @@ const MessageSuccess: React.FC = () => {
           <h1>{props.title}</h1>
           <p>{props.description}</p>
 
-          <Link to="/study">Acessar lista</Link>
+          <Link to={props.link}>{props.titleButton}</Link>
         </div>
       </div>
     </div>
