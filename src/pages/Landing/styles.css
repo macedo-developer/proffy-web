@@ -47,6 +47,8 @@
 
 #page-landing-content {
   height: 40%;
+
+  margin: 0 auto;
 }
 
 .logo-container {
@@ -150,16 +152,24 @@
 }
 
 @media (min-width: 1024px) {
+  #page-landing {
+    overflow: hidden;
+  }
+
   #page-landing-content {
     max-width: 1100px;
+    height: 50%;
+
+    margin: 0 auto;
 
     display: grid;
-    grid-template-rows: 350px 1fr;
+    grid-template-rows: 300px;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas: "proffy hero hero" "buttons buttons total";
+    grid-template-areas: "proffy hero hero";
   }
 
   .logo-container {
+    display: block;
     grid-area: proffy;
     align-self: center;
     text-align: left;
@@ -177,7 +187,16 @@
 
   .hero-image {
     grid-area: hero;
-    justify-self: end;
+    justify-self: flex-end;
+  }
+
+  #page-landing .footer {
+    height: 40%;
+
+    display: grid;
+    grid-template-rows: 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "title total buttons buttons";
   }
 
   .buttons-container {
@@ -186,11 +205,28 @@
   }
 
   .buttons-container a {
-    font-size: 2.4rem;
+    height: 10.4rem;
+    flex-direction: row;
+    font-size: 1.8rem;
     justify-self: end;
+  }
+
+  .buttons-container a img {
+    margin-bottom: 0;
+  }
+
+  .titleFooter {
+    grid-area: title;
+
+    align-self: center;
   }
 
   .total-connections {
     grid-area: total;
+    max-width: 17rem;
+    justify-self: right;
+    align-self: center;
+    text-align: right;
+    margin-right: 7rem;
   }
 }

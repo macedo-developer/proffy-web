@@ -51,8 +51,10 @@ function Landing() {
       </div>
 
       <div className="footer">
-        <h2>Seja bem vindo.</h2>
-        <strong>O que deseja fazer?</strong>
+        <div className="titleFooter">
+          <h2>Seja bem vindo.</h2>
+          <strong>O que deseja fazer?</strong>
+        </div>
 
         <div className="buttons-container">
           <Link to="/study" className="study">
