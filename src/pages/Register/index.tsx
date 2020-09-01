@@ -1,22 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
+
+import { Link, useHistory } from "react-router-dom";
 
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import Input from "../../components/Input";
 
 import logoImg from "../../assets/logo.svg";
 import logoPrimaryImg from "../../assets/logo-primary.svg";
 import backImg from "../../assets/icons/back.svg";
 
 import "./styles.css";
-import Input from "../../components/Input";
-import { Link } from "react-router-dom";
 
 function Register() {
+  const history = useHistory();
+
   const [eyePassword, setEyePassword] = useState(false);
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    history.push({
+      pathname: "success",
+      state: {
+        title: "Cadastro Concluído!",
+        description:
+          "Agora você faz parte da plataforma da Proffy. Tenha uma ótima experiência.",
+        link: "/",
+        titleButton: "Fazer login",
+      },
+    });
+  }
 
   return (
     <div id="page-register">
@@ -28,7 +46,7 @@ function Register() {
             </Link>
             <img src={logoPrimaryImg} alt="Logo Proffy" />
           </header>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Cadastro</h1>
 
             <p>Preencha os dados abaixo para começar</p>
