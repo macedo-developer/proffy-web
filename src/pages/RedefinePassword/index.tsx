@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, FormEvent } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import logoImg from "../../assets/logo.svg";
 import logoPrimaryImg from "../../assets/logo-primary.svg";
@@ -9,7 +9,22 @@ import "./styles.css";
 import Input from "../../components/Input";
 
 function RedefinePassword() {
+  const history = useHistory();
+
   const [email, setEmail] = useState("");
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    history.push({
+      pathname: "/success",
+      state: {
+        title: "Redefinição enviada!",
+        description:
+          "Boa, agora é só checar o e-mail que foi enviado para você redefinir sua senha e aproveite os estudos.",
+      },
+    });
+  }
 
   return (
     <div id="page-redefine">
@@ -22,7 +37,7 @@ function RedefinePassword() {
             <img src={logoPrimaryImg} alt="Logo proffy" />
           </header>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Eita, esqueceu sua senha?</h1>
             <p>Não esquenta, vamos dar um jeito nisso.</p>
 
