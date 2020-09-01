@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { FiPower } from "react-icons/fi";
+
 import logoImg from "../../assets/logo.svg";
 import landingImg from "../../assets/landing.svg";
 import studyIcon from "../../assets/icons/study.svg";
@@ -22,6 +24,19 @@ function Landing() {
 
   return (
     <div id="page-landing">
+      <header>
+        <div className="avatar">
+          <img
+            src="https://avatars0.githubusercontent.com/u/51935321?s=460&u=96e365fd38fcdabd5aa97ab462db5bc4499f49e2&v=4"
+            alt="Avatar"
+          />
+          <p>Renata Macedo </p>
+        </div>
+
+        <Link to="/">
+          <FiPower color="#fff" size={24} />
+        </Link>
+      </header>
       <div id="page-landing-content" className="container">
         <div className="logo-container">
           <img src={logoImg} alt="Proffy" />
@@ -33,6 +48,11 @@ function Landing() {
           alt="Plataforma de Estudos"
           className="hero-image"
         />
+      </div>
+
+      <div className="footer">
+        <h2>Seja bem vindo.</h2>
+        <strong>O que deseja fazer?</strong>
 
         <div className="buttons-container">
           <Link to="/study" className="study">
