@@ -22,7 +22,7 @@ function Login() {
 
   useEffect(() => {
     const res = localStorage.getItem("remember");
-    if (res?.length != 0) setRemember(res == "true" ? true : false);
+    if (res?.length !== 0) setRemember(res === "true" ? true : false);
 
     if (res === "true") {
       setUsername(localStorage.getItem("username") || "");
