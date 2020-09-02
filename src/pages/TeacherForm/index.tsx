@@ -115,7 +115,25 @@ function TeacherForm() {
           <fieldset>
             <legend>Seus dados</legend>
 
-            <Input
+            <div className="group-itens">
+              <div className="name-avatar">
+                <img
+                  src="https://avatars0.githubusercontent.com/u/51935321?s=460&u=96e365fd38fcdabd5aa97ab462db5bc4499f49e2&v=4"
+                  alt="Avatar"
+                />
+                <p>Renata Macedo</p>
+              </div>
+
+              <Input
+                name="whatsapp"
+                label="Whatsapp"
+                value={whatsapp}
+                onChange={(e) => {
+                  setWhatsapp(e.target.value);
+                }}
+              />
+            </div>
+            {/* <Input
               name="name"
               label="Nome Completo"
               value={name}
@@ -130,15 +148,8 @@ function TeacherForm() {
               onChange={(e) => {
                 setAvatar(e.target.value);
               }}
-            />
-            <Input
-              name="whatsapp"
-              label="Whatsapp"
-              value={whatsapp}
-              onChange={(e) => {
-                setWhatsapp(e.target.value);
-              }}
-            />
+            /> */}
+
             <Textarea
               name="bio"
               label="Biografia"
