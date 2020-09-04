@@ -161,35 +161,36 @@ function TeacherForm() {
           </fieldset>
           <fieldset>
             <legend>Sobre a aula</legend>
-
-            <Select
-              name="subject"
-              label="Matéria"
-              value={subject}
-              onChange={(e) => {
-                setSubject(e.target.value);
-              }}
-              options={[
-                { value: "Artes", label: "Artes" },
-                { value: "Matemática", label: "Matemática" },
-                { value: "Ciências", label: "Ciências" },
-                { value: "Portugês", label: "Portugês" },
-                { value: "Química", label: "Química" },
-                { value: "Física", label: "Física" },
-                { value: "Geografia", label: "Geografia" },
-                { value: "Filosofia", label: "Filosofia" },
-                { value: "Sociologia", label: "Sociologia" },
-                { value: "Educação Física", label: "Educação Física" },
-              ]}
-            />
-            <Input
-              name="cost"
-              label="Custo da sua hora por aula"
-              value={cost}
-              onChange={(e) => {
-                setCost(e.target.value);
-              }}
-            />
+            <div className="input-group">
+              <Select
+                name="subject"
+                label="Matéria"
+                value={subject}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                }}
+                options={[
+                  { value: "Artes", label: "Artes" },
+                  { value: "Matemática", label: "Matemática" },
+                  { value: "Ciências", label: "Ciências" },
+                  { value: "Portugês", label: "Portugês" },
+                  { value: "Química", label: "Química" },
+                  { value: "Física", label: "Física" },
+                  { value: "Geografia", label: "Geografia" },
+                  { value: "Filosofia", label: "Filosofia" },
+                  { value: "Sociologia", label: "Sociologia" },
+                  { value: "Educação Física", label: "Educação Física" },
+                ]}
+              />
+              <Input
+                name="cost"
+                label="Custo da sua hora por aula"
+                value={cost}
+                onChange={(e) => {
+                  setCost(e.target.value);
+                }}
+              />
+            </div>
           </fieldset>
 
           <fieldset>

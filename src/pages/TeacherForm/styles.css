@@ -54,10 +54,10 @@
   color: var(--color-primary-dark);
 }
 
-#page-teacher-form main fieldset .input-block + .textarea-block,
+/* #page-teacher-form main fieldset .input-block + .textarea-block,
 #page-teacher-form main fieldset .select-block + .input-block {
   margin-top: 2.4rem;
-}
+} */
 
 #page-teacher-form main .group-itens {
   display: flex;
@@ -158,6 +158,13 @@
 
   #page-teacher-form main .group-itens .name-avatar {
     margin-bottom: 0;
+  }
+
+  #page-teacher-form main fieldset .input-group {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 1rem;
+    column-gap: 1.6rem;
   }
 
   #page-teacher-form main fieldset .schedule-item {
