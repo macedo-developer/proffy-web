@@ -7,7 +7,7 @@ import logoImg from "../../assets/logo.svg";
 import backIcon from "../../assets/icons/back.svg";
 
 interface PageHeaderProps {
-  title: string;
+  title?: string;
   description?: string;
   page?: string;
 }
