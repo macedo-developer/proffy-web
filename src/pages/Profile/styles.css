@@ -2,3 +2,42 @@
   width: 100vw;
   height: 100vh;
 }
+
+#page-profile .page-header {
+  background-image: url("../../assets/login-background.svg");
+  height: 380px;
+}
+
+#page-profile .infos-profile {
+  width: 100%;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-profile .infos-profile img {
+  width: 15rem;
+  height: 15rem;
+
+  border-radius: 50%;
+  margin-top: 3rem;
+}
+
+#page-profile .infos-profile h2 {
+  font: 700 3rem Archivo;
+  line-height: 2.5rem;
+  color: var(--color-title-in-primary);
+
+  margin-top: 2rem;
+}
+
+#page-profile .infos-profile span {
+  margin-top: 0.5rem;
+
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: var(--color-title-in-primary);
+}
