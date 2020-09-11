@@ -25,17 +25,14 @@ function Landing() {
   return (
     <div id="page-landing">
       <header>
-        {/* <Link to="/profile"> */}
-        <div className="avatar">
+        <Link to="/profile" className="toProfile">
           <img
             src="https://avatars0.githubusercontent.com/u/51935321?s=460&u=96e365fd38fcdabd5aa97ab462db5bc4499f49e2&v=4"
             alt="Avatar"
           />
           <p>Renata Macedo </p>
-        </div>
-        {/* </Link> */}
-
-        <Link to="/">
+        </Link>
+        <Link to="/" className="logout">
           <FiPower color="#fff" size={24} />
         </Link>
       </header>

@@ -20,22 +20,25 @@
   margin-bottom: 2rem;
 }
 
-#page-landing header .avatar {
+#page-landing header .toProfile {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-decoration: none;
 }
-#page-landing header .avatar img {
+#page-landing header .toProfile img {
   height: 42px;
   border-radius: 50%;
 }
 
-#page-landing header .avatar p {
+#page-landing header .toProfile p {
   margin-left: 2rem;
   font: 500 1.2rem Poppins;
   line-height: 2.2rem;
+  color: var(--color-text-in-primary);
 }
-#page-landing header a {
+#page-landing header a.logout {
   height: 4rem;
   width: 4rem;
   background: var(--color-primary-dark);
