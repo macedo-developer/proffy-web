@@ -40,7 +40,7 @@ function Profile() {
           </fieldset>
           <fieldset>
             <legend>Sobre a aula</legend>
-            <div className="input-gorup">
+            <div className="input-group">
               <Select
                 label="Matéria"
                 name="subject"
@@ -66,7 +66,7 @@ function Profile() {
               <button>+ Novo horário</button>
             </legend>
 
-            <div className="input-groups">
+            <div className="schedule-item">
               <Select
                 name="week_day"
                 label="Dia da semana"
