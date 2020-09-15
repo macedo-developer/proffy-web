@@ -84,6 +84,10 @@ function Profile() {
               <Input name="from" label="Das" type="time" />
               <Input name="to" label="Até" type="time" />
             </div>
+            <div className="button-del">
+              <hr />
+              <button>Excluir horário</button>
+            </div>
           </fieldset>
 
           <footer>
