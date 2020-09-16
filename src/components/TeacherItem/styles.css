@@ -136,6 +136,10 @@
     padding: 0 3.2rem;
   }
 
+  .teacher-item .list-schedules ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .teacher-item footer p strong {
     display: initial;
     margin-left: 1.6rem;
