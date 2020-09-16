@@ -53,10 +53,12 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
               <li key={item.id}>
                 <div className="week_day">
                   <span>Dia</span>
+                  <br />
                   <strong>{item.week_day}</strong>
                 </div>
                 <div className="hours">
                   <span>Horário</span>
+                  <br />
                   <strong>{`${item.from}h - ${item.to}h`}</strong>
                 </div>
               </li>
