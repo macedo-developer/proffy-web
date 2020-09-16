@@ -15,6 +15,14 @@ export interface Teacher {
   subject: string;
   whatsapp: string;
   user_id: string;
+  schedule: Array<ScheduleItens>;
+}
+
+interface ScheduleItens {
+  id: number;
+  week_day: string;
+  from: string;
+  to: string;
 }
 
 interface TeacherItemProps {
@@ -37,6 +45,25 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         </div>
       </header>
       <p>{teacher.bio}</p>
+
+      <div className="list-schedules">
+        <ul>
+          {teacher.schedule.map((item) => {
+            return (
+              <li key={item.id}>
+                <div className="week_day">
+                  <span>Dia</span>
+                  <strong>{item.week_day}</strong>
+                </div>
+                <div className="hours">
+                  <span>Horário</span>
+                  <strong>{`${item.from}h - ${item.to}h`}</strong>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       <footer>
         <p>
