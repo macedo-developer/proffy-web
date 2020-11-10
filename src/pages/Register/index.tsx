@@ -10,6 +10,7 @@ import logoPrimaryImg from "../../assets/logo-primary.svg";
 import backImg from "../../assets/icons/back.svg";
 
 import "./styles.css";
+import api from "../../services/api";
 
 function Register() {
   const history = useHistory();
@@ -24,16 +25,25 @@ function Register() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    history.push({
-      pathname: "success",
-      state: {
-        title: "Cadastro Concluído!",
-        description:
-          "Agora você faz parte da plataforma da Proffy. Tenha uma ótima experiência.",
-        link: "/",
-        titleButton: "Fazer login",
-      },
-    });
+    api
+      .post("users", {
+        name,
+        last_name: surname,
+        email,
+        password,
+      })
+      .then((response) => {
+        history.push({
+          pathname: "success",
+          state: {
+            title: "Cadastro Concluído!",
+            description:
+              "Agora você faz parte da plataforma da Proffy. Tenha uma ótima experiência.",
+            link: "/",
+            titleButton: "Fazer login",
+          },
+        });
+      });
   }
 
   return (
