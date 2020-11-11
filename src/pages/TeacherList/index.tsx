@@ -26,6 +26,8 @@ function TeacherList() {
       },
     });
 
+    console.log(response.data);
+
     setTeachres(response.data);
   }
 
@@ -85,7 +87,7 @@ function TeacherList() {
       </PageHeader>
 
       <main>
-        {teachres && (
+        {teachres.length === 0 && (
           <div className="no-results">
             <p>Nenhum professor encontrado com sua pesquisa.</p>
           </div>
