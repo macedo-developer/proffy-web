@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FormEvent } from "react";
 
 import { Link, useHistory } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -9,6 +9,7 @@ import purpleHeartImg from "../../assets/icons/purple-heart.svg";
 
 import "./styles.css";
 import Input from "../../components/Input";
+import api from "../../services/api";
 
 function Login() {
   const history = useHistory();
@@ -30,15 +31,28 @@ function Login() {
     }
   }, []);
 
-  function handleSubmit() {
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
     if (username === "" && password === "") return alert("Preencha os campos!");
 
-    if (remember) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-    }
+    api
+      .get("/user", {
+        params: {
+          email: username,
+          password,
+        },
+      })
+      .then((response) => {
+        if (remember) {
+          localStorage.setItem("username", username);
+          localStorage.setItem("password", password);
+        }
 
-    history.push("/landing");
+        history.push("/landing");
+      })
+      .catch((err) => {
+        setPassword("");
+      });
   }
 
   function handleRemember() {
