@@ -48,7 +48,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
 
       <div className="list-schedules">
         <ul>
-          {teacher.schedule.map((item) => {
+          {/* {teacher.schedule.map((item) => {
             return (
               <li key={item.id}>
                 <div className="week_day">
@@ -63,7 +63,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
                 </div>
               </li>
             );
-          })}
+          })} */}
         </ul>
       </div>
 
