@@ -85,8 +85,6 @@ function TeacherForm() {
       schedule: scheduleItems,
     };
 
-    console.log(data);
-
     api
       .post("classes", data)
       .then((response) => {
