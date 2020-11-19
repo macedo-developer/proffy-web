@@ -48,6 +48,8 @@ function Login() {
           localStorage.setItem("password", password);
         }
 
+        localStorage.setItem("id", response.data.id);
+
         history.push("/landing");
       })
       .catch((err) => {
