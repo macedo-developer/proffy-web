@@ -9,7 +9,7 @@ import api from "../../services/api";
 
 import "./styles.css";
 
-// import convertHourToMinute from "../../utils/convertMinuteToHour";
+import convertMinuteToHour from "../../utils/convertMinuteToHour";
 
 interface UserItem {
   id: number;
@@ -133,7 +133,7 @@ function Profile() {
                     name="from"
                     label="Das"
                     type="time"
-                    // value={convertHourToMinute(schedule.from)}
+                    value={convertMinuteToHour(schedule.from)}
                   />
                   <Input
                     name="to"
