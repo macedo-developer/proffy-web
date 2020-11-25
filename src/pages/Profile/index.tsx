@@ -133,7 +133,7 @@ function Profile() {
                     name="from"
                     label="Das"
                     type="time"
-                    value={convertMinuteToHour(schedule.from)}
+                    // value={convertMinuteToHour(schedule.from)}
                   />
                   <Input
                     name="to"
